@@ -11,6 +11,7 @@ Router.map(function() {
     this.route('index');
     this.route('new');
     this.route('edit', { path: '/:story_id/edit' });
+    this.route('view', { path: '/:story_id/view' });
   });
 });
 
