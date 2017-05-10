@@ -1,1 +1,15 @@
-{{outlet}}
+<div class="row">
+  {{#each model as |task|}}
+    <div class="col-sm-3">
+      <div class="panel panel-default">
+        <div class="panel-body text-center">
+          <p>Name: <b>{{task.name}}</b></p>
+          <p>Story: {{book.story.title}}</p>
+        </div>
+        <div class="panel-footer text-center">
+          <b>Actions</b>
+        </div>
+      </div>
+    </div>
+  {{/each}}
+</div>
