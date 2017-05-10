@@ -14,6 +14,7 @@
         <th>{{story.dueDate}}</th>
         <th class="text-center">
           {{#link-to 'stories.edit' story.id class='btn btn-success btn-xs'}}Edit{{/link-to}}
+          <button class="btn btn-danger btn-xs" {{action 'deleteStory' story}}>Delete</button>
         </th>
       </tr>
     {{/each}}
