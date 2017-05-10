@@ -7,13 +7,11 @@ export default Ember.Route.extend({
 
   actions: {
     saveTask(editTask) {
-      let story = this.controller.get('model.story');;
+      let story = this.controller.get('model.story');
+      let storyId = this.controller.get('model.story.id');
 
       editTask.set('story', story);
-      story.get('tasks').pushObject(editTask);
-      editTask.save().then(function () {
-        story.save();
-      }).then(() => this.transitionTo('tasks'));
+      editTask.save().then(() => this.transitionTo('stories.view', storyId));
     },
   }
 });
