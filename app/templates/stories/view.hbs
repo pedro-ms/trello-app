@@ -7,10 +7,17 @@
   <div class="panel-body">
     <b>Date: {{model.dueDate}} </b>
     <h2><b>Tasks:</b></h2>
-    <div class="col-md-6">
-      {{#each model.tasks as |task|}}
-        <b>{{task.name}}</b>
-      {{/each}}
-    </div>
+    {{#each model.tasks as |task|}}
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h1 class="panel-title">
+            <b>Task: {{task.name}}</b>
+          </h1>
+        </div>
+        <div class="panel-body">
+          <b>Story: {{task.story.title}}</b>
+        </div>
+      </div>
+    {{/each}}
   </div>
 </div>
