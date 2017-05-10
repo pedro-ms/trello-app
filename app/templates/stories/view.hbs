@@ -7,17 +7,20 @@
   <div class="panel-body">
     <b>Date: {{model.dueDate}} </b>
     <h2><b>Tasks:</b></h2>
-    {{#each model.tasks as |task|}}
-      <div class="panel panel-default">
-        <div class="panel-heading">
-          <h1 class="panel-title">
-            <b>Task: {{task.name}}</b>
-          </h1>
+    <div class="row">
+      {{#each model.tasks as |task|}}
+        <div class="col-sm-3">
+          <div class="panel panel-default">
+            <div class="panel-body text-center">
+              <p>Name: <b>{{task.name}}</b></p>
+              <p>Story: {{task.story.title}}</p>
+            </div>
+            <div class="panel-footer text-center">
+              <button class="btn btn-danger btn-xs" {{action 'deleteTask' task}}>Delete</button>
+            </div>
+          </div>
         </div>
-        <div class="panel-body">
-          <b>Story: {{task.story.title}}</b>
-        </div>
-      </div>
-    {{/each}}
+      {{/each}}
+    </div>
   </div>
 </div>
