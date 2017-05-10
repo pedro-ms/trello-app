@@ -15,7 +15,7 @@
     </div>
     <div class="form-group">
       <div class="col-sm-offset-2 col-sm-10">
-        <button type="submit" class="btn btn-default" {{action 'saveStory' model}}>Add Story</button>
+        <button type="submit" class="btn btn-default" {{action 'saveStory' model}} disabled="{{unless model.isValid true}}">Add Story</button>
       </div>
     </div>
   </div>
