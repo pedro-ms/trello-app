@@ -13,8 +13,15 @@ export default Ember.Route.extend({
       let storyId = this.controller.get('storyId');
       let story = this.get('store').peekRecord('story', storyId);
 
-      editTask.set('story', story);
-      editTask.save().then(() => this.transitionTo('tasks'));
-    }
+      saveTask(newTask) {
+        let storyId = this.controller.get('storyId');
+        let story = this.get('store').peekRecord('story', storyId);
+
+        newTask.set('story', story);
+        story.get('tasks').pushObject(newTask);
+        newTask.save().then(function () {
+          story.save();
+        }).then(() => this.transitionTo('tasks'));
+      },
   }
 });
