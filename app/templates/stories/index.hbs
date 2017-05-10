@@ -1,1 +1,22 @@
-{{outlet}}
+<div>
+  <table class="table table-bordered table-striped">
+    <thead>
+      <tr>
+        <th class="col-md-5 col-md-offset-2 text-center">Title</th>
+        <th class="col-md-4 col-md-offset-2 text-center">Date</th>
+        <th class="col-md-4 col-md-offset-2 text-center">Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+    {{#each model as |story|}}
+      <tr>
+        <th>{{story.title}}</th>
+        <th>{{story.due}}</th>
+        <th class="text-center">
+          <b>Actions</b>
+        </th>
+      </tr>
+    {{/each}}
+    </tbody>
+  </table>
+</div>
