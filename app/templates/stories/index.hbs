@@ -13,7 +13,7 @@
         <th>{{story.title}}</th>
         <th>{{story.dueDate}}</th>
         <th class="text-center">
-          <b>Actions</b>
+          {{#link-to 'stories.edit' story.id class='btn btn-success btn-xs'}}Edit{{/link-to}}
         </th>
       </tr>
     {{/each}}
